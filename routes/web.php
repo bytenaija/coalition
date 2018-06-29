@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses'=>'ProductsController@index'])->name('home');
+
+Route::post('/save', ['uses'=>'ProductsController@save'])->name('save');
+
+Route::put('/edit/{index}', ['uses'=>'ProductsController@edit'])->name('edit');
